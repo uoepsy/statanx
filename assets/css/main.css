@@ -15,8 +15,8 @@ html, body {
 #headercont{
   background-color: #2db1cb;
   position: relative;
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 }
 #header .h1{
   font-size: 3em;
@@ -209,6 +209,7 @@ h1 {
 
 
 /* TILE SPEC */
+
 
 .tiles article.style1 > .image{
   clip-path: url(#topleft);
