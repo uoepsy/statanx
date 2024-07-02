@@ -4,13 +4,18 @@
     <title>TITLE HERE</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!---<script>
+    <script src="assets/js/jquery.min.js"></script> 
+    <script src="assets/js/modal2.js"></script>
+		<script>
             $(function(){
-                $("#includedt1").load("t1.html");
-                $("#includedt2").load("t2.html");
-                $("#includedt3").load("t3.html");
+                $("#includejig1").load("jig1.html");
+                $("#includejig2").load("jig2.html");
+                $("#includejig3").load("jig3.html");
+                $("#includejig4").load("jig4.html");
+                $("#includejig5").load("jig5.html");
+                $("#includejig6").load("jig6.html");
             });
-    </script>--->
+        </script>
 	</head>
 	<body>
 		<!-- Header -->
@@ -20,43 +25,57 @@
 		  </div>
 		
 		</header>
-
+		
+		 <!-- POP UPS -->
+		<div id="includejig1"></div>
+		<div id="includejig2"></div>
+		<div id="includejig3"></div>
+		<div id="includejig4"></div>
+		<div id="includejig5"></div>
+		<div id="includejig6"></div>
+		
+		
+		
+		
 		<!-- Main -->
 		<div id="main">
 			<!--Tab content -->
       <section class="tiles">
         <article class="style1">
           <span class="image"><div class="square", style="background: #053C5E;"></div></span>
-          <a><h1>Getting to know your students</h1>
-            stuff here. more stuff</a>
+          <a onclick="togglePopup('1')" class="btn btn1"><h1>Getting to know your students</h1>
+            stuff here. more stuff
+          </a>
+          
         </article>
         <article class="style2">
           <span class="image"><div class="square", style="background: #1F7A8C;"></div></span>
-          <a><h1>Setting up your students for success</h1>
-            stuff here. more stuff</a>
+          <a onclick="togglePopup('2')" class="btn btn2"><h1>Setting up your students for success</h1>
+              yet more stuff
+          </a>
+            
         </article>
         <article class="style3">
           <span class="image"><div class="square", style="background: #BFDBF7;"></div></span>
-          <a><h1>Teaching your students</h1>
+          <a onclick="togglePopup('3')" class="btn btn3"><h1>Teaching your students</h1>
             stuff here. more stuff</a>
         </article>
         <article class="style4">
           <span class="image"><div class="square", style="background: #A31621;"></div></span>
-          <a><h1>Supporting your students</h1>
+          <a onclick="togglePopup('4')" class="btn btn4"><h1>Supporting your students</h1>
             stuff here. more stuff</a>
         </article>
         <article class="style5">
           <span class="image"><div class="square", style="background: #BFDBF7;"></div></span>
-          <a><h1>Assessing your students</h1>
+          <a onclick="togglePopup('5')" class="btn btn5"><h1>Assessing your students</h1>
           stuff here. more stuff</a>
         </article>
         <article class="style6">
           <span class="image"><div class="square", style="background: #FCFCFC;"></div></span>
-          <a><h1>Learning from your students</h1>
+          <a onclick="togglePopup('6')" class="btn btn6"><h1>Learning from your students</h1>
           stuff here. more stuff</a>
         </article>
-        
-        
+      
       </section>
     
     </div>
@@ -86,5 +105,6 @@
   <svg class="svg">
   <clipPath id="bottomright" clipPathUnits="objectBoundingBox"><path d="M 0 0 H 0.3 C 0.3 0 0.3 0.1 0.4 0.1 C 0.5 0.1 0.5 0 0.5 0 H 1 V 0.9 H 0 V 0 V 0.6 C 0 0.6 0.1 0.6 0.1 0.5 C 0.1 0.4 0 0.4 0 0.4"></path></clipPath>
   </svg>
+  
   
 </html>
