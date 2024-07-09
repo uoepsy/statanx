@@ -331,7 +331,7 @@ body:not(.is-touch) .tiles article:hover .content {
     font-size:25px;
     font-weight:600;
     line-weight:30px;
-    text-align:center;
+    text-align: center;
     
 }
 
@@ -479,4 +479,8 @@ body:not(.is-touch) .tiles article:hover .content {
   .tiles article {
     width: calc(50%) !important;
   }
+  .popup .content {
+    padding: 2em;
+  }
+
 }
