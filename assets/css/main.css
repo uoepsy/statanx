@@ -13,7 +13,8 @@ html, body {
   text-align: center;
 }
 #headercont{
-  background-color: #2db1cb;
+  background-color: #264653;
+  color: white;
   position: relative;
 	padding-top: 3em;
 	padding-bottom: 3em;
@@ -80,6 +81,7 @@ h1 {
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;
 			width: calc(33.33%);
+			text-align: center;
 }
 		
 .tiles article > .image {
@@ -91,6 +93,7 @@ h1 {
 				display: block;
 				width: 100%;
 				overflow: hidden;
+				text-align: center;
 }
 
 .tiles article > .image img {
@@ -167,14 +170,12 @@ h1 {
 				transition: background-color 0.5s ease, transform 0.5s ease;
 				position: absolute;
 				top: 0;
+				left: 0;
 				width: 70%;
 				height: 90%;
-				padding-left: 2.5em; 
-        padding-right: 2.5em; 
-				border-radius: 4px;
-				border-bottom: 0;
-				color: #ffffff;
 				text-align: center;
+				border-radius: 4px;
+				color: #ffffff;
 				text-decoration: none;
 				z-index: 3;
 }
@@ -187,9 +188,7 @@ h1 {
 .tiles article > a:hover {
 					color: #ffffff !important;
 }
-.tiles article > a h2 {
-					margin: 0;
-}
+
 .tiles article > a .content {
 					-moz-transition: max-height 0.5s ease, opacity 0.5s ease;
 					-webkit-transition: max-height 0.5s ease, opacity 0.5s ease;
@@ -210,7 +209,6 @@ h1 {
 
 /* TILE SPEC */
 
-
 .tiles article.style1 > .image{
   clip-path: url(#topleft);
 }
@@ -230,23 +228,23 @@ h1 {
   clip-path: url(#bottomright);
 }
 
-.tiles article.style1 > .image:before {
-				background-color: #053C5E;
-}
-.tiles article.style2 > .image:before {
-				background-color: #1F7A8C;
-}
-.tiles article.style3 > .image:before {
-				background-color: #BFDBF7;
-}
-.tiles article.style4 > .image:before {
-				background-color: #A31621;
+.tiles article.style6 > .image:before {
+				background-color: #e76f51;
 }
 .tiles article.style5 > .image:before {
-				background-color: #9B33CB;
+				background-color: #f4a261;
 }
-.tiles article.style6 > .image:before {
-				background-color: #053C5E;
+.tiles article.style4 > .image:before {
+				background-color: #e9c46a;
+}
+.tiles article.style3 > .image:before {
+				background-color: #8ab17d;
+}
+.tiles article.style2 > .image:before {
+				background-color: #2a9d8f;
+}
+.tiles article.style1 > .image:before {
+				background-color: #287271;
 }
 
 
@@ -271,8 +269,7 @@ body:not(.is-touch) .tiles article:hover > .image {
 				z-index: 4;
 }
 body:not(.is-touch) .tiles article:hover > .image:before {
-					background-color: #333333;
-					opacity: 0.35;
+					filter: brightness(70%);
 					z-index: 4;
 }
 
@@ -310,8 +307,8 @@ body:not(.is-touch) .tiles article:hover .content {
     width:75%;
     height: 80%;
     z-index:6;
-    text-align:center;
-    padding:5em;
+    text-align: left;
+    padding: 5em;
     box-sizing:border-box;
     overflow-y: scroll;
 }
@@ -319,7 +316,7 @@ body:not(.is-touch) .tiles article:hover .content {
   margin-bottom: 2em;
 }
 .popup .content p{
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 
@@ -347,6 +344,51 @@ body:not(.is-touch) .tiles article:hover .content {
     transform:translate(-50%,-50%) scale(1);
 }
 
+/* COLLAPSIBLES */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible, .collapsible2, .collapsible3, .collapsible4, .collapsible5, .collapsible6 {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: .5em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  margin-bottom: .5em;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+.active, .collapsible2:hover {
+  background-color: #ccc;
+}
+.active, .collapsible3:hover {
+  background-color: #ccc;
+}
+.active, .collapsible4:hover {
+  background-color: #ccc;
+}
+.active, .collapsible5:hover {
+  background-color: #ccc;
+}
+.active, .collapsible6:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.ccontent {
+  padding: .5em;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.ccontent > p {
+  margin-bottom: .5em !important;
+}
 
 
 @media screen and (max-width: 5000px) {
@@ -355,6 +397,9 @@ body:not(.is-touch) .tiles article:hover .content {
   }
   .tiles{
     padding-left: 6em;
+  }
+  .tiles article > a {
+    margin-left: 3em;
   }
   .tiles article.style2 {
     left: -3em;
@@ -380,6 +425,9 @@ body:not(.is-touch) .tiles article:hover .content {
   }
   .tiles{
     padding-left: 5em;
+  }
+  .tiles article > a {
+    margin-left: 2em;
   }
   .tiles article.style2 {
     left: -2.5em;
@@ -409,7 +457,29 @@ body:not(.is-touch) .tiles article:hover .content {
 		font-size: 10pt;
   }
 }
-
-
-
-
+@media screen and (max-width: 500px) {
+  #headercont{
+	  margin: 0 1em 0 1em;
+  }
+  body, input, select, textarea{
+		font-size: 8pt;
+  }
+  .tiles article.style1 > .image, .tiles article.style2 > .image, .tiles article.style3 > .image, .tiles article.style4 > .image, .tiles article.style5 > .image, .tiles article.style6 > .image{
+    clip-path: none;
+  }
+  .tiles{
+    padding: 0 1em 0 1em;
+  }
+  .tiles article > a{
+    margin-left: .5em;
+    margin-right: .5em;
+    width: 90%;
+  }
+  .tiles article.style2, .tiles article.style3, .tiles article.style4,.tiles article.style5, .tiles article.style6{
+    left: 0;
+    top: 0;
+  }
+  .tiles article {
+    width: calc(50%);
+  }
+}
