@@ -457,15 +457,12 @@ body:not(.is-touch) .tiles article:hover .content {
 		font-size: 10pt;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #headercont{
 	  margin: 0 1em 0 1em;
   }
-  body, input, select, textarea{
-		font-size: 8pt;
-  }
   .tiles article.style1 > .image, .tiles article.style2 > .image, .tiles article.style3 > .image, .tiles article.style4 > .image, .tiles article.style5 > .image, .tiles article.style6 > .image{
-    clip-path: none;
+    clip-path: none !important;
   }
   .tiles{
     padding: 0 1em 0 1em;
@@ -480,6 +477,6 @@ body:not(.is-touch) .tiles article:hover .content {
     top: 0;
   }
   .tiles article {
-    width: calc(50%);
+    width: calc(50%) !important;
   }
 }
