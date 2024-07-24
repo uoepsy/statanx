@@ -231,16 +231,16 @@ h1 {
 .tiles article.style6 > .image:before {
 				background-color: #e76f51;
 }
-.tiles article.style5 > .image:before {
+.tiles article.style4 > .image:before {
 				background-color: #f4a261;
 }
-.tiles article.style4 > .image:before {
+.tiles article.style2 > .image:before {
 				background-color: #e9c46a;
 }
 .tiles article.style3 > .image:before {
 				background-color: #8ab17d;
 }
-.tiles article.style2 > .image:before {
+.tiles article.style5 > .image:before {
 				background-color: #2a9d8f;
 }
 .tiles article.style1 > .image:before {
