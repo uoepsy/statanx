@@ -1,0 +1,76 @@
+---
+title: "Getting to know one another"
+format: revealjs
+editor: visual
+---
+
+## Who are we?  
+
+Introduce the teaching team
+
+
+## Who are you?
+
+2 min activity: introduce yourself to your neighbour!  
+
+
+## Your backgrounds
+
+```{r}
+tibble(
+  Mathematics = round(rchisq(94,1)+1),
+  Statistics = round(rchisq(94,1)),
+  Programming = round(rchisq(94,1)),
+  Computing_Skills = round(rchisq(94,2)+1),
+) |> mutate(across(everything(),~pmin(7,pmax(1,.-1)))) |>
+  pivot_longer(everything()) |>
+  mutate(value = factor(value,levels=1:7,
+                        labels=c("very inexperienced",2:6,"very experienced"))) |>
+  ggplot(aes(x = name,fill=value))+
+  geom_bar()+
+  scale_fill_viridis_d("Background",breaks = c("very inexperienced", "very experienced")) +  # Keep full color scale but limit legend
+  coord_flip()+
+  labs(x="experience with...")+
+  theme_minimal()
+```
+
+## 
+
+```{r}
+df <- read_csv("C:/Users/jking34/Downloads/feelings.csv")
+#df <- read_csv("C:/Users/jking34/Downloads/skills.csv")
+library(tm)
+df[,1] |> VectorSource() |> Corpus() -> docs
+
+docs <- docs |>
+  tm_map(removeNumbers) |>
+  tm_map(removePunctuation) |>
+  tm_map(stripWhitespace)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords, stopwords("english"))
+
+dtm <- TermDocumentMatrix(docs) 
+matrix <- as.matrix(dtm) 
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+df2 <- data.frame(word = names(words),freq=words)
+
+rm = c("feel","’m","’ll","think","like")
+
+df2 <- df2[!df2$word %in% rm,]
+library(wordcloud)
+wordcloud(words = df2$word, freq = df2$freq, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35,
+          colors=brewer.pal(8, "Dark2"))
+
+
+
+
+
+
+```
+
+
+## finding support
+
+
+
